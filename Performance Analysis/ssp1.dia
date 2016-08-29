@@ -1,0 +1,28 @@
+t1=datetime('December 02, 2015 23:15:00','InputFormat','MMMM d, yyyy HH:mm:ss')
+
+t1 = 
+
+   02-Dec-2015 23:15:00
+
+t13=datetime('December 29, 2015 14:15:00','InputFormat','MMMM d, yyyy HH:mm:ss');
+Dx=t13-t1;  %duration plot
+Tx=Dx/12
+
+Tx = 
+
+   53:15:00
+
+Tx=Dx/12;  %interval
+t0=t1-Tx
+
+t0 = 
+
+   30-Nov-2015 18:00:00
+
+tend=t13+Tx
+
+tend = 
+
+   31-Dec-2015 19:30:00
+
+diary off

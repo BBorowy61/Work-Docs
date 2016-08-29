@@ -1,0 +1,262 @@
+s=0.0001:0.01:1;
+Tmax=1;
+sc=0.35;
+T=Tmax*2/(s/sc+sc/s);
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mrdivide')" style="font-weight:bold"> / </a>
+Matrix dimensions must agree.} 
+T=Tmax*2./(s/sc+sc./s);
+plot(s,T)
+shg
+T1=2*Tmax*s/sc;
+plot(s,[T,T1])
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot')" style="font-weight:bold">plot</a>
+Vectors must be the same length.} 
+plot(s,[T;T1])
+shg
+Pn = 4000;
+nn=1430;
+Isn=8.6;
+Tmax = 2.2;
+Tn = Pn/wn
+{Undefined function or variable 'wn'.} 
+wn = 2*pi*nn/60
+wn =
+  149.7492
+Tn = Pn/wn
+Tn =
+   26.7113
+s=0.0001:0.01:1;
+s=-1:0.01:1;
+T=Tmax*2./(s/sc+sc./s);
+T1=2*Tmax*s/sc;
+plot(s,[T;T1]);shg
+grid on;shg
+
+
+Lls=100e-6;
+Llr=Lls;
+Lm = 100e-3;
+Rs=60e-3;
+Rr=Rs;
+sc=0.4;
+Vs=600;
+ws=2*pi*60;
+Zin = Rs+j*ws*Lls;
+Zm=j*ws*Lm;
+Zr=j*ws*Llr+Rr./s;
+zpar = Zr*Zm/(Zr+Zm)
+[Warning: Rank deficient, rank = 0, tol = NaN.] 
+[] 
+zpar =
+     0
+zpar = Zr.*Zm./(Zr+Zm)
+zpar =
+  Columns 1 through 8
+  -0.0599 + 0.0378i  -0.0605 + 0.0378i  -0.0611 + 0.0378i  -0.0617 + 0.0378i  -0.0624 + 0.0378i  -0.0630 + 0.0378i  -0.0637 + 0.0378i  -0.0644 + 0.0378i
+  Columns 9 through 16
+  -0.0651 + 0.0378i  -0.0658 + 0.0378i  -0.0665 + 0.0378i  -0.0673 + 0.0378i  -0.0680 + 0.0378i  -0.0688 + 0.0378i  -0.0696 + 0.0378i  -0.0704 + 0.0378i
+  Columns 17 through 24
+  -0.0713 + 0.0378i  -0.0721 + 0.0378i  -0.0730 + 0.0378i  -0.0739 + 0.0378i  -0.0748 + 0.0378i  -0.0758 + 0.0378i  -0.0768 + 0.0378i  -0.0778 + 0.0378i
+  Columns 25 through 32
+  -0.0788 + 0.0378i  -0.0798 + 0.0378i  -0.0809 + 0.0378i  -0.0820 + 0.0378i  -0.0832 + 0.0378i  -0.0843 + 0.0379i  -0.0855 + 0.0379i  -0.0868 + 0.0379i
+  Columns 33 through 40
+  -0.0881 + 0.0379i  -0.0894 + 0.0379i  -0.0907 + 0.0379i  -0.0921 + 0.0379i  -0.0936 + 0.0379i  -0.0950 + 0.0379i  -0.0966 + 0.0379i  -0.0982 + 0.0379i
+  Columns 41 through 48
+  -0.0998 + 0.0379i  -0.1015 + 0.0379i  -0.1032 + 0.0379i  -0.1051 + 0.0380i  -0.1069 + 0.0380i  -0.1089 + 0.0380i  -0.1109 + 0.0380i  -0.1130 + 0.0380i
+  Columns 49 through 56
+  -0.1152 + 0.0380i  -0.1174 + 0.0380i  -0.1198 + 0.0380i  -0.1222 + 0.0381i  -0.1247 + 0.0381i  -0.1274 + 0.0381i  -0.1302 + 0.0381i  -0.1331 + 0.0381i
+  Columns 57 through 64
+  -0.1361 + 0.0382i  -0.1393 + 0.0382i  -0.1426 + 0.0382i  -0.1460 + 0.0382i  -0.1497 + 0.0383i  -0.1535 + 0.0383i  -0.1576 + 0.0383i  -0.1618 + 0.0384i
+  Columns 65 through 72
+  -0.1663 + 0.0384i  -0.1711 + 0.0384i  -0.1761 + 0.0385i  -0.1815 + 0.0385i  -0.1871 + 0.0386i  -0.1932 + 0.0387i  -0.1996 + 0.0387i  -0.2065 + 0.0388i
+  Columns 73 through 80
+  -0.2139 + 0.0389i  -0.2218 + 0.0390i  -0.2303 + 0.0391i  -0.2395 + 0.0392i  -0.2495 + 0.0393i  -0.2603 + 0.0395i  -0.2722 + 0.0396i  -0.2851 + 0.0398i
+  Columns 81 through 88
+  -0.2994 + 0.0400i  -0.3151 + 0.0403i  -0.3326 + 0.0406i  -0.3522 + 0.0410i  -0.3742 + 0.0414i  -0.3992 + 0.0419i  -0.4277 + 0.0425i  -0.4605 + 0.0433i
+  Columns 89 through 96
+  -0.4989 + 0.0443i  -0.5443 + 0.0455i  -0.5987 + 0.0472i  -0.6651 + 0.0494i  -0.7482 + 0.0525i  -0.8550 + 0.0571i  -0.9973 + 0.0641i  -1.1964 + 0.0757i
+  Columns 97 through 104
+  -1.4946 + 0.0971i  -1.9904 + 0.1432i  -2.9752 + 0.2742i  -5.8404 + 0.9663i      NaN +    NaNi   5.8404 + 0.9663i   2.9752 + 0.2742i   1.9904 + 0.1432i
+  Columns 105 through 112
+   1.4946 + 0.0971i   1.1964 + 0.0757i   0.9973 + 0.0641i   0.8550 + 0.0571i   0.7482 + 0.0525i   0.6651 + 0.0494i   0.5987 + 0.0472i   0.5443 + 0.0455i
+  Columns 113 through 120
+   0.4989 + 0.0443i   0.4605 + 0.0433i   0.4277 + 0.0425i   0.3992 + 0.0419i   0.3742 + 0.0414i   0.3522 + 0.0410i   0.3326 + 0.0406i   0.3151 + 0.0403i
+  Columns 121 through 128
+   0.2994 + 0.0400i   0.2851 + 0.0398i   0.2722 + 0.0396i   0.2603 + 0.0395i   0.2495 + 0.0393i   0.2395 + 0.0392i   0.2303 + 0.0391i   0.2218 + 0.0390i
+  Columns 129 through 136
+   0.2139 + 0.0389i   0.2065 + 0.0388i   0.1996 + 0.0387i   0.1932 + 0.0387i   0.1871 + 0.0386i   0.1815 + 0.0385i   0.1761 + 0.0385i   0.1711 + 0.0384i
+  Columns 137 through 144
+   0.1663 + 0.0384i   0.1618 + 0.0384i   0.1576 + 0.0383i   0.1535 + 0.0383i   0.1497 + 0.0383i   0.1460 + 0.0382i   0.1426 + 0.0382i   0.1393 + 0.0382i
+  Columns 145 through 152
+   0.1361 + 0.0382i   0.1331 + 0.0381i   0.1302 + 0.0381i   0.1274 + 0.0381i   0.1247 + 0.0381i   0.1222 + 0.0381i   0.1198 + 0.0380i   0.1174 + 0.0380i
+  Columns 153 through 160
+   0.1152 + 0.0380i   0.1130 + 0.0380i   0.1109 + 0.0380i   0.1089 + 0.0380i   0.1069 + 0.0380i   0.1051 + 0.0380i   0.1032 + 0.0379i   0.1015 + 0.0379i
+  Columns 161 through 168
+   0.0998 + 0.0379i   0.0982 + 0.0379i   0.0966 + 0.0379i   0.0950 + 0.0379i   0.0936 + 0.0379i   0.0921 + 0.0379i   0.0907 + 0.0379i   0.0894 + 0.0379i
+  Columns 169 through 176
+   0.0881 + 0.0379i   0.0868 + 0.0379i   0.0855 + 0.0379i   0.0843 + 0.0379i   0.0832 + 0.0378i   0.0820 + 0.0378i   0.0809 + 0.0378i   0.0798 + 0.0378i
+  Columns 177 through 184
+   0.0788 + 0.0378i   0.0778 + 0.0378i   0.0768 + 0.0378i   0.0758 + 0.0378i   0.0748 + 0.0378i   0.0739 + 0.0378i   0.0730 + 0.0378i   0.0721 + 0.0378i
+  Columns 185 through 192
+   0.0713 + 0.0378i   0.0704 + 0.0378i   0.0696 + 0.0378i   0.0688 + 0.0378i   0.0680 + 0.0378i   0.0673 + 0.0378i   0.0665 + 0.0378i   0.0658 + 0.0378i
+  Columns 193 through 200
+   0.0651 + 0.0378i   0.0644 + 0.0378i   0.0637 + 0.0378i   0.0630 + 0.0378i   0.0624 + 0.0378i   0.0617 + 0.0378i   0.0611 + 0.0378i   0.0605 + 0.0378i
+  Column 201
+   0.0599 + 0.0378i
+size(Zpar)
+{Undefined function or variable 'Zpar'.} 
+size(zpar)
+ans =
+     1   201
+Zpar = Zr.*Zm./(Zr+Zm)
+Zpar =
+  Columns 1 through 8
+  -0.0599 + 0.0378i  -0.0605 + 0.0378i  -0.0611 + 0.0378i  -0.0617 + 0.0378i  -0.0624 + 0.0378i  -0.0630 + 0.0378i  -0.0637 + 0.0378i  -0.0644 + 0.0378i
+  Columns 9 through 16
+  -0.0651 + 0.0378i  -0.0658 + 0.0378i  -0.0665 + 0.0378i  -0.0673 + 0.0378i  -0.0680 + 0.0378i  -0.0688 + 0.0378i  -0.0696 + 0.0378i  -0.0704 + 0.0378i
+  Columns 17 through 24
+  -0.0713 + 0.0378i  -0.0721 + 0.0378i  -0.0730 + 0.0378i  -0.0739 + 0.0378i  -0.0748 + 0.0378i  -0.0758 + 0.0378i  -0.0768 + 0.0378i  -0.0778 + 0.0378i
+  Columns 25 through 32
+  -0.0788 + 0.0378i  -0.0798 + 0.0378i  -0.0809 + 0.0378i  -0.0820 + 0.0378i  -0.0832 + 0.0378i  -0.0843 + 0.0379i  -0.0855 + 0.0379i  -0.0868 + 0.0379i
+  Columns 33 through 40
+  -0.0881 + 0.0379i  -0.0894 + 0.0379i  -0.0907 + 0.0379i  -0.0921 + 0.0379i  -0.0936 + 0.0379i  -0.0950 + 0.0379i  -0.0966 + 0.0379i  -0.0982 + 0.0379i
+  Columns 41 through 48
+  -0.0998 + 0.0379i  -0.1015 + 0.0379i  -0.1032 + 0.0379i  -0.1051 + 0.0380i  -0.1069 + 0.0380i  -0.1089 + 0.0380i  -0.1109 + 0.0380i  -0.1130 + 0.0380i
+  Columns 49 through 56
+  -0.1152 + 0.0380i  -0.1174 + 0.0380i  -0.1198 + 0.0380i  -0.1222 + 0.0381i  -0.1247 + 0.0381i  -0.1274 + 0.0381i  -0.1302 + 0.0381i  -0.1331 + 0.0381i
+  Columns 57 through 64
+  -0.1361 + 0.0382i  -0.1393 + 0.0382i  -0.1426 + 0.0382i  -0.1460 + 0.0382i  -0.1497 + 0.0383i  -0.1535 + 0.0383i  -0.1576 + 0.0383i  -0.1618 + 0.0384i
+  Columns 65 through 72
+  -0.1663 + 0.0384i  -0.1711 + 0.0384i  -0.1761 + 0.0385i  -0.1815 + 0.0385i  -0.1871 + 0.0386i  -0.1932 + 0.0387i  -0.1996 + 0.0387i  -0.2065 + 0.0388i
+  Columns 73 through 80
+  -0.2139 + 0.0389i  -0.2218 + 0.0390i  -0.2303 + 0.0391i  -0.2395 + 0.0392i  -0.2495 + 0.0393i  -0.2603 + 0.0395i  -0.2722 + 0.0396i  -0.2851 + 0.0398i
+  Columns 81 through 88
+  -0.2994 + 0.0400i  -0.3151 + 0.0403i  -0.3326 + 0.0406i  -0.3522 + 0.0410i  -0.3742 + 0.0414i  -0.3992 + 0.0419i  -0.4277 + 0.0425i  -0.4605 + 0.0433i
+  Columns 89 through 96
+  -0.4989 + 0.0443i  -0.5443 + 0.0455i  -0.5987 + 0.0472i  -0.6651 + 0.0494i  -0.7482 + 0.0525i  -0.8550 + 0.0571i  -0.9973 + 0.0641i  -1.1964 + 0.0757i
+  Columns 97 through 104
+  -1.4946 + 0.0971i  -1.9904 + 0.1432i  -2.9752 + 0.2742i  -5.8404 + 0.9663i      NaN +    NaNi   5.8404 + 0.9663i   2.9752 + 0.2742i   1.9904 + 0.1432i
+  Columns 105 through 112
+   1.4946 + 0.0971i   1.1964 + 0.0757i   0.9973 + 0.0641i   0.8550 + 0.0571i   0.7482 + 0.0525i   0.6651 + 0.0494i   0.5987 + 0.0472i   0.5443 + 0.0455i
+  Columns 113 through 120
+   0.4989 + 0.0443i   0.4605 + 0.0433i   0.4277 + 0.0425i   0.3992 + 0.0419i   0.3742 + 0.0414i   0.3522 + 0.0410i   0.3326 + 0.0406i   0.3151 + 0.0403i
+  Columns 121 through 128
+   0.2994 + 0.0400i   0.2851 + 0.0398i   0.2722 + 0.0396i   0.2603 + 0.0395i   0.2495 + 0.0393i   0.2395 + 0.0392i   0.2303 + 0.0391i   0.2218 + 0.0390i
+  Columns 129 through 136
+   0.2139 + 0.0389i   0.2065 + 0.0388i   0.1996 + 0.0387i   0.1932 + 0.0387i   0.1871 + 0.0386i   0.1815 + 0.0385i   0.1761 + 0.0385i   0.1711 + 0.0384i
+  Columns 137 through 144
+   0.1663 + 0.0384i   0.1618 + 0.0384i   0.1576 + 0.0383i   0.1535 + 0.0383i   0.1497 + 0.0383i   0.1460 + 0.0382i   0.1426 + 0.0382i   0.1393 + 0.0382i
+  Columns 145 through 152
+   0.1361 + 0.0382i   0.1331 + 0.0381i   0.1302 + 0.0381i   0.1274 + 0.0381i   0.1247 + 0.0381i   0.1222 + 0.0381i   0.1198 + 0.0380i   0.1174 + 0.0380i
+  Columns 153 through 160
+   0.1152 + 0.0380i   0.1130 + 0.0380i   0.1109 + 0.0380i   0.1089 + 0.0380i   0.1069 + 0.0380i   0.1051 + 0.0380i   0.1032 + 0.0379i   0.1015 + 0.0379i
+  Columns 161 through 168
+   0.0998 + 0.0379i   0.0982 + 0.0379i   0.0966 + 0.0379i   0.0950 + 0.0379i   0.0936 + 0.0379i   0.0921 + 0.0379i   0.0907 + 0.0379i   0.0894 + 0.0379i
+  Columns 169 through 176
+   0.0881 + 0.0379i   0.0868 + 0.0379i   0.0855 + 0.0379i   0.0843 + 0.0379i   0.0832 + 0.0378i   0.0820 + 0.0378i   0.0809 + 0.0378i   0.0798 + 0.0378i
+  Columns 177 through 184
+   0.0788 + 0.0378i   0.0778 + 0.0378i   0.0768 + 0.0378i   0.0758 + 0.0378i   0.0748 + 0.0378i   0.0739 + 0.0378i   0.0730 + 0.0378i   0.0721 + 0.0378i
+  Columns 185 through 192
+   0.0713 + 0.0378i   0.0704 + 0.0378i   0.0696 + 0.0378i   0.0688 + 0.0378i   0.0680 + 0.0378i   0.0673 + 0.0378i   0.0665 + 0.0378i   0.0658 + 0.0378i
+  Columns 193 through 200
+   0.0651 + 0.0378i   0.0644 + 0.0378i   0.0637 + 0.0378i   0.0630 + 0.0378i   0.0624 + 0.0378i   0.0617 + 0.0378i   0.0611 + 0.0378i   0.0605 + 0.0378i
+  Column 201
+   0.0599 + 0.0378i
+size(zpar)
+ans =
+     1   201
+Zpar = Zr.*Zm./(Zr+Zm);
+Is=Vs./(Zin+Zpar);
+plot(s,Is)
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[] 
+shg
+plot(s,abs(Is));grid on;shg
+plot(s,real(Is));grid on;shg
+subplot(211);
+plot(s,real(Is));grid on;shg
+subplot(212);
+plot(s,imag(Is));grid on;shg
+Ir=Is.*Zm./(Zr+Zm);
+subplot(211);
+plot(s,[real(Is),real(Ir)]);grid on;shg
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot')" style="font-weight:bold">plot</a>
+Vectors must be the same length.} 
+plot(s,[real(Is);real(Ir)]);grid on;shg
+subplot(212);
+plot(s,[imag(Is);imag(Ir)]);grid on;shg
+Im=Ir - Is;
+figure
+plot(s,real(Im)]);grid on;shg
+ plot(s,real(Im)]);grid on;shg
+                
+{Error: Unbalanced or unexpected parenthesis or bracket.
+} 
+plot(s,real(Im));grid on;shg
+subplot(211);
+plot(s,real(Im));grid on;shg
+subplot(212);
+plot(s,imag(Im));grid on;shg
+Im1=Is.*Zr./(Zr+Zm);
+figure(2)
+subplot(211);
+plot(s,[real(Im);real(Im1)];);grid on;shg
+ plot(s,[real(Im);real(Im1)];);grid on;shg
+                            
+{Error: Unbalanced or unexpected parenthesis or bracket.
+} 
+plot(s,[real(Im);real(Im1)]);grid on;shg
+Ir=Is.*Zm./(Zm-Zr);
+Im=Ir - Is;
+Im1=Is.*Zr./(Zm-Zr);
+subplot(211);
+plot(s,[real(Im);real(Im1)]);grid on;shg
+subplot(212);
+plot(s,[imag(Im);imag(Im1)]);grid on;shg
+Is0=Vs./(Zin+Zm);
+Ir0=0;
+Im0=Is0+Ir0;
+Ir=-Is.*Zm./(Zm-Zr);
+Im=Ir + Is;
+Im1=-Is.*Zr./(Zm-Zr);
+subplot(211);
+plot(s,[real(Im);real(Im1)]);grid on;shg
+subplot(212);
+plot(s,[imag(Im);imag(Im1)]);grid on;shg
+kk=find(s==0)
+kk =
+   101
+Is(kk)=Is0;
+Ir(kk)=Ir0;
+Im(kk)=Im0;
+subplot(211);
+plot(s,[real(Im);real(Im1)]);grid on;shg
+subplot(212);
+plot(s,[imag(Im);imag(Im1)]);grid on;shg
+Im(kk)=Im0;
+Im1(kk)=Im0;
+subplot(212);
+plot(s,[imag(Im);imag(Im1)]);grid on;shg
+subplot(211);
+plot(s,[imag(Is);imag(Ir)]);grid on;shg
+plot(s,[real(Is);real(Ir)]);grid on;shg
+subplot(212);
+plot(s,[imag(Is);imag(Ir)]);grid on;shg
+Pmech = Ir.*Rr*(1-s)./s;
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mtimes')" style="font-weight:bold"> * </a>
+Inner matrix dimensions must agree.} 
+Pmech = (Ir*Rr).*(1-s)./s;
+figure;
+plot(s,Pmech);grid on;shg
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[] 
+plot(s,Real(Pmech));grid on;shg
+{Undefined function or variable 'Real'.} 
+plot(s,real(Pmech));grid on;shg
+Tmech = (Ir*Rr)./(we*s);
+{Undefined function or variable 'we'.} 
+Tmech = (Ir*Rr)./(we*s);
+{Undefined function or variable 'we'.} 
+Tmech = (Ir*Rr)./(ws*s);
+plot(s,real(Tmech));grid on;shg
+diary off

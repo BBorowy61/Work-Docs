@@ -1,0 +1,142 @@
+server = 'SOCC';
+connstr = strcat('Provider = PIOLEDB.1; Data Source=', server,'; Persist Security Info = False');
+connstr
+connstr =
+Provider = PIOLEDB.1; Data Source=SOCC; Persist Security Info = False
+connect adobcn(connstr)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('connect', 'C:\Program Files\MATLAB\R2015b\toolbox\control\ctrlobsolete\connect.m', 109)" style="font-weight:bold">connect</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015b\toolbox\control\ctrlobsolete\connect.m',109,0)">line 109</a>)
+Not enough input arguments.} 
+connect=adobcn(connstr)
+{Undefined function or variable 'adobcn'.} 
+connect=adodbcn(connstr)
+{Undefined function or variable 'adodbcn'.} 
+connect=adodbcn(connstr)
+connect =
+	COM.ADODB_Connection
+connect
+connect =
+	COM.ADODB_Connection
+whos connect
+  Name         Size            Bytes  Class                   Attributes
+
+  connect      1x1                    COM.ADODB_Connection              
+
+get(connect)
+           Properties: [1x1 Interface.Microsoft_ActiveX_Data_Objects_6.1_Library.Properties]
+     ConnectionString: 'Provider=PIOLEDB.1;User ID="";Initial Catalog=piarchive;Data Source=SOCC;Integrated Security="";Command Timeout=-1;Log Level=0;Lo…'
+       CommandTimeout: 60
+    ConnectionTimeout: 15
+              Version: '6.1'
+               Errors: [1x1 Interface.Microsoft_ActiveX_Data_Objects_6.1_Library.Errors]
+      DefaultDatabase: 'piarchive'
+       IsolationLevel: 'adXactCursorStability'
+           Attributes: 0
+       CursorLocation: 'adUseClient'
+                 Mode: 'adModeUnknown'
+             Provider: 'PIOLEDB.1'
+                State: 1
+connect.Properties
+ans =
+	Interface.Microsoft_ActiveX_Data_Objects_6.1_Library.Properties
+connect.Version
+ans =
+6.1
+BattSOC1 = PI_CompressedData(server,MCH1RPSC001_MVVDC_BatSOC','*-1h','*',connect)
+{Undefined function or variable 'MCH1RPSC001_MVVDC_BatSOC'.} 
+BattSOC1 = PI_CompressedData(server,'MCH1RPSC001_MVVDC_BatSOC','*-1h','*',connect)
+BattSOC1 =
+     []
+BattSOC1 = PI_CompressedData(server,'MCH1RPCS001_MVVDC_BatSOC','*-1h','*',connect);
+size(BattSOC1)
+ans =
+    19     3
+BattSOC1
+BattSOC1 = 
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 10:51:54 AM'    [38]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 10:52:10 AM'    [38]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:02:10 AM'    [40]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:04:16 AM'    [42]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:06:25 AM'    [44]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:08:27 AM'    [46]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:10:02 AM'    [48]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:11:25 AM'    [50]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:12:11 AM'    [51]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:12:24 AM'    [52]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:14:42 AM'    [54]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:21:01 AM'    [52]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:22:11 AM'    [51]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:28:09 AM'    [50]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:30:13 AM'    [48]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:31:42 AM'    [46]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:32:11 AM'    [45]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:33:33 AM'    [44]
+    'MCH1RPCS001_MVVDC_BatSOC'    '8/25/2016 11:34:58 AM'    [42]
+Time = BattSOC1{2}
+Time =
+MCH1RPCS001_MVVDC_BatSOC
+Time = BattSOC1(:,2)
+Time = 
+    '8/25/2016 10:51:54 AM'
+    '8/25/2016 10:52:10 AM'
+    '8/25/2016 11:02:10 AM'
+    '8/25/2016 11:04:16 AM'
+    '8/25/2016 11:06:25 AM'
+    '8/25/2016 11:08:27 AM'
+    '8/25/2016 11:10:02 AM'
+    '8/25/2016 11:11:25 AM'
+    '8/25/2016 11:12:11 AM'
+    '8/25/2016 11:12:24 AM'
+    '8/25/2016 11:14:42 AM'
+    '8/25/2016 11:21:01 AM'
+    '8/25/2016 11:22:11 AM'
+    '8/25/2016 11:28:09 AM'
+    '8/25/2016 11:30:13 AM'
+    '8/25/2016 11:31:42 AM'
+    '8/25/2016 11:32:11 AM'
+    '8/25/2016 11:33:33 AM'
+    '8/25/2016 11:34:58 AM'
+Time = BattSOC1{:,2}
+Time =
+8/25/2016 10:51:54 AM
+Time = BattSOC1(:,2)
+Time = 
+    '8/25/2016 10:51:54 AM'
+    '8/25/2016 10:52:10 AM'
+    '8/25/2016 11:02:10 AM'
+    '8/25/2016 11:04:16 AM'
+    '8/25/2016 11:06:25 AM'
+    '8/25/2016 11:08:27 AM'
+    '8/25/2016 11:10:02 AM'
+    '8/25/2016 11:11:25 AM'
+    '8/25/2016 11:12:11 AM'
+    '8/25/2016 11:12:24 AM'
+    '8/25/2016 11:14:42 AM'
+    '8/25/2016 11:21:01 AM'
+    '8/25/2016 11:22:11 AM'
+    '8/25/2016 11:28:09 AM'
+    '8/25/2016 11:30:13 AM'
+    '8/25/2016 11:31:42 AM'
+    '8/25/2016 11:32:11 AM'
+    '8/25/2016 11:33:33 AM'
+    '8/25/2016 11:34:58 AM'
+Time = cell2array(BattSOC1(:,2))
+{Undefined function or variable 'cell2array'.} 
+help cell
+ <strong>cell</strong>  Create cell array.
+    <strong>cell</strong>(N) is an N-by-N cell array of empty matrices.
+ 
+    <strong>cell</strong>(M,N) or <strong>cell</strong>([M,N]) is an M-by-N cell array of empty
+    matrices.
+ 
+    <strong>cell</strong>(M,N,P,...) or <strong>cell</strong>([M N P ...]) is an M-by-N-by-P-by-...
+    cell array of empty matrices.
+ 
+    <strong>cell</strong>(SIZE(A)) is a cell array the same size as A containing
+    all empty matrices.
+ 
+    See also <a href="matlab:help ones">ones</a>, <a href="matlab:help zeros">zeros</a>, <a href="matlab:help struct">struct</a>, <a href="matlab:help deal">deal</a>, <a href="matlab:help paren">paren</a>.
+
+    <a href="matlab:doc cell">Reference page for cell</a>
+
+doc cell
+diary off

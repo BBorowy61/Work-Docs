@@ -1,0 +1,135 @@
+delete(e)
+e=actxserver('Excel.Application');
+%Add workbook
+eWorkbook= e.Workbooks.Add;
+e.Visible=1;
+%make the first sheet active
+eSheets=e.ActiveWorkbook.Sheets;
+eSheet1 = eSheets.get('Item',1);
+eSheet1.Activate;
+A=[1 2;3 4];
+eActiveSheetRange=e.Activesheet.get('Range','A1:B2');
+eActiveseetRange.Value=A;
+eActiveseetRange
+
+eActiveseetRange = 
+
+    Value: [2x2 double]
+
+eActiveseetRange.Value
+
+ans =
+
+     1     2
+     3     4
+
+%Read the data back
+eRange=e.Activesheet.get('Range','A1:B2')
+ 
+eRange =
+ 
+	Interface.00020846_0000_0000_C000_000000000046
+
+B=erange.Value
+{Undefined variable "erange" or class "erange.Value".
+} 
+B=eRange.Value
+
+B = 
+
+    [NaN]    [NaN]
+    [NaN]    [NaN]
+
+eSheets=e.ActiveWorkbook.Sheets
+ 
+eSheets =
+ 
+	Interface.000208D7_0000_0000_C000_000000000046
+
+eSheet1 = eSheets.get('Item',1);
+eSheet1
+ 
+eSheet1 =
+ 
+	Interface.000208D8_0000_0000_C000_000000000046
+
+eSheet1.Activate
+A=[1 2;3 4];
+A
+
+A =
+
+     1     2
+     3     4
+
+eActiveseetRange
+
+eActiveseetRange = 
+
+    Value: [2x2 double]
+
+eActiveseetRange.Value
+
+ans =
+
+     1     2
+     3     4
+
+B
+
+B = 
+
+    [NaN]    [NaN]
+    [NaN]    [NaN]
+
+B=reshape([B{:}],size(B))
+
+B =
+
+   NaN   NaN
+   NaN   NaN
+
+eActiveSheetRange=eSheet1.get('Range','A1:B2');
+eActiveSheetRange.Value=A
+ 
+eActiveSheetRange =
+ 
+	Interface.00020846_0000_0000_C000_000000000046
+
+eRange=e.Activesheet.get('Range','A1:B2')
+ 
+eRange =
+ 
+	Interface.00020846_0000_0000_C000_000000000046
+
+eRange=eSheet1.get('Range','A1:B2')
+ 
+eRange =
+ 
+	Interface.00020846_0000_0000_C000_000000000046
+
+B=eRange.Value
+
+B = 
+
+    [1]    [2]
+    [3]    [4]
+
+B=reshape([B{:}],size(B))
+
+B =
+
+     1     2
+     3     4
+
+eWorkbook.SaveAs('myfile.xls')
+eWorkbook.Saved
+
+ans =
+
+     1
+
+Close(eWorkbook)
+Quit(e)
+delete(e)
+diary off
